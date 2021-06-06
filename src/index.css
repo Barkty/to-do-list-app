@@ -1,0 +1,23 @@
+body {
+  padding: 50px;
+  background-color: #66ccff;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+.fade {
+  display: inline-block;
+  color: gray;
+  animation: fade-out linear infinite;
+  -webkit-animation: fade linear infinite;
+  -moz-animation: fade linear infinite;
+  -o-animation: fade linear infinite;
+}
