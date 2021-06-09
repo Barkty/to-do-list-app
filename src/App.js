@@ -1,5 +1,5 @@
 import React, {Fragment, useState, useEffect } from 'react';
-import 'index.css';
+import './index.css';
 import Form from './components/Form';
 import TaskList from './components/TaskList';
 
