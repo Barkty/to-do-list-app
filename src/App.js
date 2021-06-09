@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Fragment, useState, useEffect } from 'react';
+import 'index.css';
+import Form from './components/Form';
+import TaskList from './components/TaskList';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [tasks, setTasks] = useState([]);
+
+    //Updates the tasks in localStorage
+
+    //Checks if any contacts were added in a previous seesion
+    useEffect(() => {
+	let previouslySavedTasks = localStorage.getItem("tasks");
+
+	if(previouslySavedTasks) {
+	    //Concerts to array
+	    previouslySavedTasks = JSON.parse(previouslySavedTasks);
+	    setTasks(previouslySavedTasks);
+	}
+    }, []);
+    
+    return (
+	<Fragment>
+	    <Form tasks={tasks} updatedTasks={setTasks}/>
+	    <TaskList tasks={tasks}/>
+	 </Fragment>
+    )
 }
 
 export default App;
